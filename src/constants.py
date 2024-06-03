@@ -1,0 +1,1 @@
+VDB_NAME = "qa_vectors"

@@ -1,0 +1,8 @@
+transformers
+requests
+datasets
+torch
+numpy
+vlite2
+python-dotenv
+openai
