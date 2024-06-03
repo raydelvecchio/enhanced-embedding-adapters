@@ -62,5 +62,5 @@ def build_database(max_size: int = 50):
     print(f"Database built and saved successfully with a maximum of {max_size} entries.")
 
 if __name__ == "__main__":
-    # download_squad_dataset()
-    # build_database()
+    download_squad_dataset()
+    build_database()

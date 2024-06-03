@@ -4,3 +4,4 @@ venv
 *.index
 *.info
 *.json
+__pycache__
