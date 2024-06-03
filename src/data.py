@@ -2,7 +2,6 @@ from datasets import load_dataset
 from vlite2 import VLite2, Ingestor
 from constants import VDB_NAME
 import json
-import numpy as np
 
 def download_squad_dataset():
     """
@@ -62,24 +61,6 @@ def build_database(max_size: int = 50):
     vdb.save()
     print(f"Database built and saved successfully with a maximum of {max_size} entries.")
 
-def rank_entries(input_text: str, top_k: int = 10):
-    """
-    Given an input text, calculate the cosine similarity to each vector in the VLite2 database,
-    re-rank them, and return the entire list of entries sorted by similarity.
-    """
-    vdb = VLite2(vdb_name=VDB_NAME)
-    results = vdb.retrieve(text=input_text, top_k=10)
-    
-    ranked_entries = results['texts']
-    ranked_similarities = results['scores']
-
-    return list(zip(ranked_entries, ranked_similarities))
-
 if __name__ == "__main__":
-    # testing to see if things uploaded and are correctly searchable
-
     # download_squad_dataset()
     # build_database()
-
-    vdb = VLite2(VDB_NAME)
-    print(vdb.retrieve("who is the queen of england", top_k=1))
