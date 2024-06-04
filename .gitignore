@@ -5,3 +5,4 @@ venv
 *.info
 *.json
 __pycache__
+checkpoints

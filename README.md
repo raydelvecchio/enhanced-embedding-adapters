@@ -6,3 +6,9 @@ from the adapter over time. Inspired by / building tangentially to [Chroma's Emb
 * We use the questions and contexts from the SQuAD dataset
 * However, we do not use any labels or positive / negative matches from these!
 * All contexts are individually loaded into a local vector database for retrieval and vector comparison
+
+# Notes
+* Training code for Chroma's Embedding Adapter found [here](https://github.com/suvansh/ChromaAdaptEmbed/blob/main/adapt_embed/models/nn/nn.py)
+    * Appears that they use Triplet, MSE, or BCE loss to train it
+    * The `.forward` method is used to apply the adapters naturally
+    * Entire training pipeline found [here](https://github.com/suvansh/ChromaAdaptEmbed/blob/main/adapt_embed/models/nn/run_nn.py)
