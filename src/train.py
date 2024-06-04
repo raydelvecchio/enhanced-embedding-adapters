@@ -2,6 +2,7 @@ from model import MiniLMWithAdapter
 import torch
 import torch.nn as nn
 from torch.optim import Adam
+import random
 import asyncio
 from vlite2 import VLite2
 from constants import VDB_NAME
@@ -29,6 +30,7 @@ class AdapterTrainer:
         with open(file_path, 'r') as f:
             data = json.load(f)
         questions = [item['Question'] for item in data]
+        random.shuffle(questions)
         return questions
 
     async def evaluate(self, question: str, context: str) -> tuple[int, str]:

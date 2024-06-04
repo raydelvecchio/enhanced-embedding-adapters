@@ -12,3 +12,6 @@ from the adapter over time. Inspired by / building tangentially to [Chroma's Emb
     * Appears that they use Triplet, MSE, or BCE loss to train it
     * The `.forward` method is used to apply the adapters naturally
     * Entire training pipeline found [here](https://github.com/suvansh/ChromaAdaptEmbed/blob/main/adapt_embed/models/nn/run_nn.py)
+
+# TODO
+* Figure out why this isn't training properly lmfao
